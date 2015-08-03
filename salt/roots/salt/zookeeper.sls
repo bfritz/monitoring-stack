@@ -1,0 +1,3 @@
+zookeeperd:
+  pkg:
+    - installed
