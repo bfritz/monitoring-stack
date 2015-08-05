@@ -13,4 +13,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     salt.minion_config = "salt/roots/salt/minion.conf"
     salt.bootstrap_script = "salt/bootstrap-salt.sh"
   end
+
+  if (Vagrant.has_plugin?("vagrant-cachier"))
+    # cache buckets are per-box, not per-machine
+    config.cache.scope = :box
+  end
 end
