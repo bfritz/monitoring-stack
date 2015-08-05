@@ -11,5 +11,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :salt do |salt|
     salt.run_highstate = true
     salt.minion_config = "salt/roots/salt/minion.conf"
+    salt.bootstrap_script = "salt/bootstrap-salt.sh"
   end
 end
