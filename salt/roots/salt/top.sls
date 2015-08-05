@@ -2,3 +2,4 @@ base:
   '*':
     - jdk
     - zookeeper
+    - cassandra
