@@ -4,3 +4,5 @@ base:
     - zookeeper
     - cassandra
     - dev-user
+    - git
+    - lein
