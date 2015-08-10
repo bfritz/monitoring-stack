@@ -14,6 +14,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     salt.bootstrap_script = "salt/bootstrap-salt.sh"
   end
 
+  config.vm.network :forwarded_port, guest: 8080, host: 8080, protocol: 'tcp'
+  config.vm.network :forwarded_port, guest: 2003, host: 2003, protocol: 'tcp'
+
   if (Vagrant.has_plugin?("vagrant-cachier"))
     # cache buckets are per-box, not per-machine
     config.cache.scope = :box

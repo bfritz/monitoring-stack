@@ -6,3 +6,4 @@ base:
     - dev-user
     - git
     - lein
+    - cyanite-src
