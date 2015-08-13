@@ -25,3 +25,11 @@ cyanite-uberjar:
     - group: dev
     - cwd: /home/dev/src/cyanite
     - unless: test -e target/cyanite-*-standalone.jar
+
+cyanite-metrics-keyspace:
+  cmd.run:
+    - name: cqlsh -f doc/schema.cql
+    - user: dev
+    - group: dev
+    - cwd: /home/dev/src/cyanite
+    - unless: cqlsh -k metric -e 'USE metric;'
