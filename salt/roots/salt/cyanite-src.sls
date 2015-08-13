@@ -20,7 +20,6 @@ cyanite-git:
 
 cyanite-uberjar:
   cmd.run:
-    #- name: /home/dev/bin/lein uberjar
     - name: lein uberjar
     - user: dev
     - group: dev
