@@ -3,13 +3,13 @@ logging:
   console: true
   files:
     - "/var/log/cyanite/cyanite.log"
-inputs:
+input:
   - type: "carbon"
 store:
-  type: "cassandra-v2"
-  cluster: "127.0.0.1"
+  cluster: "localhost"
+  keyspace: "metric"
 index:
-  type: "memory"
+  type: memory
 api:
   port: 8080
 engine:
