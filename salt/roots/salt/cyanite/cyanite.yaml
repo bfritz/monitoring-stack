@@ -5,6 +5,8 @@ logging:
     - "/var/log/cyanite/cyanite.log"
 input:
   - type: "carbon"
+    host: "0.0.0.0"
+    port: 2003
 store:
   cluster: "localhost"
   keyspace: "metric"
