@@ -19,6 +19,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     server.vm.synced_folder "salt/roots/server/", "/srv/salt/"
   end
 
+  # client sending metrics to server
+  config.vm.define :client do |client|
+    client.vm.network "private_network", ip: "172.64.0.9"
+    client.vm.synced_folder "salt/roots/client/", "/srv/salt/"
+  end
+
   if (Vagrant.has_plugin?("vagrant-cachier"))
     # cache buckets are per-box, not per-machine
     config.cache.scope = :box
